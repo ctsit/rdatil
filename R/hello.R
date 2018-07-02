@@ -13,8 +13,6 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-install.packages(c("devtools", "roxygen2", "testthat", "knitr"))
-
-hello <- function() {
-  print("Hello, world!")
+hello <- function(your_name) {
+  print( paste("Hello" , your_name))
 }
