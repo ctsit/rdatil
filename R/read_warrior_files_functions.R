@@ -12,8 +12,6 @@ get_latest_warrior_data <- function(from_directory='~/Downloads/') {
   subDir <- "warrior_data"
   download_directory <- file.path(from_directory, subDir)
   dir.create(file.path(from_directory, subDir), showWarnings = FALSE)
-  require("knitr")
-  opts_knit$set(root.dir = download_directory)
 
   # locate latest files for each input
   input <- c("data", "dictionary")
