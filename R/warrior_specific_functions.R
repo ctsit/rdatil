@@ -1,4 +1,4 @@
-get_latest_warrior_data <- function(from_directory='~/Downloads/') {
+get_latest_warrior_data_file_names <- function(from_directory='~/Downloads/') {
   # Gets the latest (in terms of date) downloaded warrior data and dictionary data
   # from the given from_directory.
   #
@@ -9,12 +9,11 @@ get_latest_warrior_data <- function(from_directory='~/Downloads/') {
   # from the given from_directory
 
   # Locates latest files for each input
-  input <- c("data", "dictionary")
+  input <- c("data", "metadata")
   pattern <- c("WARRIOR_DATA_20\\d\\d.*\\.csv", "WARRIOR_DataDictionary_20\\d\\d.*\\.csv")
-  input_files <- data.frame(input, pattern, stringsAsFactors=FALSE)
-  latest_file <- function(x, dir) head(sort(list.files(path = dir, pattern = x), decreasing=TRUE), n=1)
-  latest <- unlist(lapply(input_files$pattern , FUN=latest_file, dir=from_directory))
-  input_files <- data.frame(input_files, latest, stringsAsFactors=FALSE)
+  find_latest_data <- function(x, dir) head(sort(list.files(path = dir, pattern = x), decreasing=TRUE), n=1)
+  file_names <- unlist(lapply(pattern , FUN=find_latest_data, dir=from_directory))
+  names(file_names) <- input
 
-  return(input_files)
+  return(file_names)
 }
