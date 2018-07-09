@@ -7,5 +7,7 @@ Authors@R: c(
     person("Philip", "Chase", email = "pbc@ufl.edu", role = c("aut", "cre")))
 Description: Provides functions that help in the generation of 	REDCap reports.
 Depends: R (>= 3.1.0)
-License: What license is it under?
+Imports:
+    dplyr
+License: MIT
 LazyData: true
