@@ -4,7 +4,7 @@ Title: Useful functions to generate REDCap reports
 Version: 0.1.0
 Authors@R: c(
     person("Marly", "Cormar", email = "marlycormar@ufl.edu", role = c("aut", "cre")),
-    person("Philip", "Chase", email = "pbc@ufl.edu", role = c("aut", "cre")))
+    person("Philip", "Chase", email = "pbc@ufl.edu", role = c("aut")))
 Description: Provides functions that help in the generation of 	REDCap reports.
 Depends: R (>= 3.1.0)
 Imports:
