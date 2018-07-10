@@ -8,8 +8,8 @@ Authors@R: c(
 Description: Provides functions that help in the generation of 	REDCap reports.
 Depends: R (>= 3.1.0)
 Imports:
-    dplyr
-    stringr
+    dplyr,
+    stringr,
     magrittr
 License: MIT
 LazyData: true
