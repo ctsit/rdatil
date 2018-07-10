@@ -1,10 +1,11 @@
 get_latest_warrior_data_file_names <- function(from_directory='~/Downloads/') {
-  # Gets the latest downloaded warrior data and metadata data files
-  # names (in terms of date) from the provided from_directory. If no
-  # arguments are provided, the directory is assumed to be the '~/Downloads/' folder.
+  # Gets the latest downloaded warrior data and metadata data filenames
+  #(in terms of date) from the provided from_directory, as well as the date
+  # reflected in the filenames. If no arguments are provided, the directory
+  # is assumed to be the '~/Downloads/' folder.
   #
   # Args:
-  #   from_directory a directory where to find the latest data
+  #   a directory where to find the latest data.
   # Returns:
   #   a list containing of three key-value paris: the latest warrior data filename, the latest
   #   dictionary data filename, and the date data was downloaded.
