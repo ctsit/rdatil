@@ -6,7 +6,8 @@ standarize_metadata <- function(metadata) {
   #
   # Args:
   #   REDCap metadata in REDCap's standard format.
-  # Returns:REDCap metadata in the SpectrumHealthResearch format
+  # Returns:
+  #   REDCap metadata in the SpectrumHealthResearch format
   #
   names(metadata) <- c(
     "field_name", "form_name", "section_header", "field_type",
