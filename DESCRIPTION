@@ -12,3 +12,4 @@ Imports:
     stringr
 License: MIT
 LazyData: true
+Suggests: testthat
