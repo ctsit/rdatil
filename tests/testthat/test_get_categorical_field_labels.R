@@ -35,11 +35,17 @@ test_that("non-categorical fields are excluded", {
   expect_true(cat_labels_row_count_by_type("descriptive") == 0)
 })
 
+# Check field_labels and field_names
 test_that("field labels change with field names", {
   expect_equal(cat_labels %>% distinct(field_label, field_name) %>% nrow(),
                cat_labels %>% distinct(field_name) %>% nrow())
 })
 
+test_that("no field_labels are NA", {
+  expect_equal(cat_labels %>% select(field_label) %>% filter(is.na(field_label)) %>% nrow(), 0)
+})
+
+# Check Keys and Values
 test_that("keys change with values", {
   expect_equal(cat_labels %>% distinct(key, value) %>% nrow(),
                cat_labels %>% distinct(value) %>% nrow())
