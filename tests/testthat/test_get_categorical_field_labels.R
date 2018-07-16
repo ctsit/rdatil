@@ -47,8 +47,8 @@ test_that("no field_labels are NA", {
 
 # Check Keys and Values
 test_that("keys change with values", {
-  expect_equal(cat_labels %>% distinct(key, value) %>% nrow(),
-               cat_labels %>% distinct(value) %>% nrow())
+  expect_equal(cat_labels %>% distinct(field_name, key, value) %>% nrow(),
+               cat_labels %>% distinct(field_name, key) %>% nrow())
 })
 
 test_that("no keys are NA", {
@@ -57,8 +57,8 @@ test_that("no keys are NA", {
 
 # Check Codes and labels
 test_that("codes change with values", {
-  expect_equal(cat_labels %>% distinct(code, label) %>% nrow(),
-               cat_labels %>% distinct(label) %>% nrow())
+  expect_equal(cat_labels %>% distinct(field_name, code, label) %>% nrow(),
+               cat_labels %>% distinct(field_name, code) %>% nrow())
 })
 
 test_that("no keys are NA", {
