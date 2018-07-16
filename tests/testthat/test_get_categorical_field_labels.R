@@ -40,4 +40,11 @@ test_that("field labels change with field names", {
                cat_labels %>% distinct(field_name) %>% nrow())
 })
 
-str(cat_labels)
+test_that("keys change with values", {
+  expect_equal(cat_labels %>% distinct(key, value) %>% nrow(),
+               cat_labels %>% distinct(value) %>% nrow())
+})
+
+test_that("no keys are NA", {
+  expect_equal(cat_labels %>% select(key) %>% filter(is.na(key)) %>% nrow(), 0)
+})
