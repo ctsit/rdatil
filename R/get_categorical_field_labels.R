@@ -14,7 +14,9 @@ get_categorical_field_labels <- function(metadata) {
     dplyr::select(c(field_name, field_type, field_label, form_name, select_choices_or_calculations))
 
   # Split columns into rows by '|'
-  categorical_fields <- categorical_fields %>% dplyr::mutate(select_choices_or_calculations = strsplit(as.character(select_choices_or_calculations), "\\|\\s?")) %>% unnest(select_choices_or_calculations)
+  categorical_fields <- categorical_fields %>%
+    dplyr::mutate(select_choices_or_calculations = strsplit(as.character(select_choices_or_calculations), "\\|\\s?")) %>%
+    unnest(select_choices_or_calculations)
 
   # Split columns into two columns by ','
   categorical_fields <- categorical_fields %>%
