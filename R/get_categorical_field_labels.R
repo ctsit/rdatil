@@ -17,7 +17,9 @@ get_categorical_field_labels <- function(metadata) {
   categorical_fields <- categorical_fields %>% dplyr::mutate(select_choices_or_calculations = strsplit(as.character(select_choices_or_calculations), "\\|\\s?")) %>% unnest(select_choices_or_calculations)
 
   # Split columns into two columns by ','
-  categorical_fields <- categorical_fields %>% separate(select_choices_or_calculations, c("key", "value"), sep="\\,", extra = "merge")
+  categorical_fields <- categorical_fields %>%
+    separate(select_choices_or_calculations, c("code", "label"), sep="\\,", extra = "merge") %>%
+    mutate(key=code, value=label)
 
   return(categorical_fields)
 }

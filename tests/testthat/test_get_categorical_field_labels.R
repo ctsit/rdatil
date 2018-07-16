@@ -54,3 +54,13 @@ test_that("keys change with values", {
 test_that("no keys are NA", {
   expect_equal(cat_labels %>% select(key) %>% filter(is.na(key)) %>% nrow(), 0)
 })
+
+# Check Codes and labels
+test_that("codes change with values", {
+  expect_equal(cat_labels %>% distinct(code, label) %>% nrow(),
+               cat_labels %>% distinct(label) %>% nrow())
+})
+
+test_that("no keys are NA", {
+  expect_equal(cat_labels %>% select(code) %>% filter(is.na(code)) %>% nrow(), 0)
+})
