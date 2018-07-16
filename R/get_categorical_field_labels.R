@@ -20,7 +20,7 @@ get_categorical_field_labels <- function(metadata) {
 
   # Split columns into two columns by ','
   categorical_fields <- categorical_fields %>%
-    separate(select_choices_or_calculations, c("code", "label"), sep="\\,", extra = "merge") %>%
+    separate(select_choices_or_calculations, c("code", "label"), sep=",\\s?", extra = "merge") %>%
     mutate(key=code, value=label)
 
   return(categorical_fields)
