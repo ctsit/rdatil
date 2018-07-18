@@ -13,4 +13,4 @@ Imports:
 Remotes: ctsi/rdatil
 License: MIT
 LazyData: true
-
+Suggests: testthat
