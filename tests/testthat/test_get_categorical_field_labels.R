@@ -23,10 +23,10 @@ test_that("dropdown fields are included", {
   expect_false(cat_labels_row_count_by_type("dropdown") == 0)
 })
 
-#test_that("yesno fields are included", {
-#  expect_equal(cat_labels_row_count_by_type("yesno"),input_data_row_count_by_type("yesno"))
-#  expect_false(cat_labels_row_count_by_type("yesno") == 0)
-#})
+test_that("yesno fields are included", {
+  expect_equal(cat_labels_row_count_by_type("yesno"),input_data_row_count_by_type("yesno"))
+  expect_false(cat_labels_row_count_by_type("yesno") == 0)
+})
 
 test_that("non-categorical fields are excluded", {
   expect_false(input_data_row_count_by_type("text") == 0)
