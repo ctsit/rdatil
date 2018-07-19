@@ -13,6 +13,10 @@ get_categorical_field_labels <- function(metadata) {
     dplyr::filter(field_type %in% c("checkbox", "radio", "yesno", "dropdown")) %>%
     dplyr::select(c(field_name, field_type, field_label, form_name, select_choices_or_calculations))
 
+  # Fill out categorical data for fields of type 'yesno'
+  categorical_fields$select_choices_or_calculations[categorical_fields$select_choices_or_calculations == "" &
+                                                      categorical_fields$field_type == "yesno"] = '1, Yes|0, No'
+
   # Split columns into rows by '|'
   categorical_fields <- categorical_fields %>%
     dplyr::mutate(select_choices_or_calculations = strsplit(as.character(select_choices_or_calculations), "\\|\\s?")) %>%

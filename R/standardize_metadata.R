@@ -18,7 +18,5 @@ standarize_metadata <- function(metadata) {
     "field_annotation"
   )
 
-  metadata$select_choices_or_calculations[metadata$select_choices_or_calculations == "" &
-                                            metadata$field_type == "yesno"] = '1, Yes|0, No'
   return(metadata)
 }
