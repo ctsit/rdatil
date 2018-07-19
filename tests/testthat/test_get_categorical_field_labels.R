@@ -61,6 +61,6 @@ test_that("codes change with values", {
                cat_labels %>% distinct(field_name, code) %>% nrow())
 })
 
-test_that("no keys are NA", {
+test_that("no codes are NA", {
   expect_equal(cat_labels %>% select(code) %>% filter(is.na(code)) %>% nrow(), 0)
 })
