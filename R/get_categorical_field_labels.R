@@ -1,14 +1,12 @@
+#' Generates a row of code-label pair data for each code in each
+#' categorical variable in a REDCap metatdata file.
+#'
+#' @param metadata A REDCap metadata file with columns in the standardized format defined in
+#'        https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r
+#' @return A dataframe with the columns, "field_name", "field_type", form_name", "code", and "label".
+#' @examples
+#' get_categorical_field_labels(metadata)
 get_categorical_field_labels <- function(metadata) {
-  # Generates a row of code-label pair data for each code in each
-  # categorical variable in a REDCap metatdata file.
-  #
-  # Args:
-  #   metadata a REDCap metadata file with columns in the
-  #   standardized format defined in
-  #      https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r
-  # Returns:
-  #   a dataframe with the columns, "field_name", "field_type", form_name", "code", and "label"
-  #
   categorical_fields <- metadata %>%
     dplyr::filter(field_type %in% c("checkbox", "radio", "yesno", "dropdown")) %>%
     dplyr::select(c(field_name, field_type, field_label, form_name, select_choices_or_calculations))
