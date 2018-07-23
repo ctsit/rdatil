@@ -1,14 +1,13 @@
+#' Renames columns in a REDCap metadata file according to the format defined in
+#' https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r
+#' and fills out the categorical data for fields of type 'yesno'.
+#'
+#' @param metadata A REDCap metadata in REDCap's standard format.
+#' @return A REDCap metadata in the SpectrumHealthResearch format
+#'         with filled out categorical data for 'yesno' fields.
+#' @examples
+#' standarize_metadata(metadata)
 standarize_metadata <- function(metadata) {
-  # Renames columns in a REDCap metadata file according to the
-  # format defined in
-  #   https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r
-  # and fills out the categorical data for fields of type 'yesno'.
-  # Args:
-  #   REDCap metadata in REDCap's standard format.
-  # Returns:
-  #   REDCap metadata in the SpectrumHealthResearch format
-  #   with filled out categorical data for 'yesno' fields.
-
   names(metadata) <- c(
     "field_name", "form_name", "section_header", "field_type",
     "field_label", "select_choices_or_calculations", "field_note",
