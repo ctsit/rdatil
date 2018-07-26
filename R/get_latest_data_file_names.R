@@ -6,6 +6,7 @@
 #' @param patterns A key-value pairs vector containing the label and regex pattern.
 #' @return A vector containing key-value pairs where the keys are the labels in 'patterns'
 #'         and the values are the latest file names according to the patterns.
+#' @export
 #' @examples
 #' get_latest_data_file_names(from_directory, patterns)
 #' get_latest_data_file_names(patterns = patterns)

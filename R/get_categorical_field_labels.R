@@ -4,7 +4,11 @@
 #' @param metadata A REDCap metadata file with columns in the standardized format defined in
 #'        https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r
 #' @return A dataframe with the columns, "field_name", "field_type", form_name", "code", and "label".
+#' @import dplyr
+#' @importFrom utils head
+#' @export
 #' @examples
+#' metadata <- read.csv('AnimalIdentification_DataDictionary.csv')
 #' get_categorical_field_labels(metadata)
 get_categorical_field_labels <- function(metadata) {
   categorical_fields <- metadata %>%

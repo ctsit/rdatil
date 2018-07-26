@@ -3,6 +3,7 @@
 #' @param data A data frame containing the data.
 #' @param columns A vector containing the column names.
 #' @return A kable.
+#' @export
 #' @examples
 #' print_table(data, columns)
 print_table <- function(data, columns) {

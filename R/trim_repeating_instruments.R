@@ -2,6 +2,7 @@
 #'
 #' @param records A data frame containing the records.
 #' @return A data frame containing the records with no repeating elements.
+#' @export
 #' @examples
 #' trim_repeating_instruments(records)
 trim_repeating_instruments <- function(records) {

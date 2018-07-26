@@ -5,6 +5,7 @@
 #' @param metadata A REDCap metadata in REDCap's standard format.
 #' @return A REDCap metadata in the SpectrumHealthResearch format
 #'         with filled out categorical data for 'yesno' fields.
+#' @export
 #' @examples
 #' standarize_metadata(metadata)
 standarize_metadata <- function(metadata) {

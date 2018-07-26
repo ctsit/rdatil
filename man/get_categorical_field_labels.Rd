@@ -19,5 +19,6 @@ Generates a row of code-label pair data for each code in each
 categorical variable in a REDCap metatdata file.
 }
 \examples{
+metadata <- read.csv('AnimalIdentification_DataDictionary.csv')
 get_categorical_field_labels(metadata)
 }

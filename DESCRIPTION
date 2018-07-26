@@ -9,9 +9,14 @@ Description: Provides functions that help in the generation of 	REDCap reports.
 Depends: R (>= 3.1.0)
 Imports:
     dplyr,
+    kableExtra,
+    knitr,
+    magrittr,
     stringr
 Remotes: ctsi/rdatil
 License: MIT
 LazyData: true
-Suggests: testthat
+Suggests: 
+    testthat,
+    tidyr
 RoxygenNote: 6.0.1
