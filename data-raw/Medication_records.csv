@@ -1,0 +1,12 @@
+record_id,redcap_repeat_instrument,redcap_repeat_instance,first_name,last_name,sex,notes,demographics_complete,medication_name,dosage,medications_complete,family_member,relation_to_patient,age_of_family_member,family_members_complete,visit_date,weight,other_visit_data,visits_complete,aeyn,aespid,aeterm,aeoccur,aestdat,aesttim,aeongo,aeendat,aeentim,aesev,aetoxgr,aeser,aescong,aesdisab,aesdth,aeshosp,aeslife,aesmie,aerel,aeacn,aeacnoth,aeout,aedis,adverse_events_complete
+1,,,Laura,Santos,0,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,medications,1,,,,,,Tylenon,20,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,medications,2,,,,,,Aspiring,10,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,family_members,1,,,,,,,,,"Putiin Sanchez",3,60,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,visits,1,,,,,,,,,,,,,2018-07-31,120,,2,,,,,,,,,,,,,,,,,,,,,,,,
+1,adverse_events,1,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,2
+2,,,John,Smith,1,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,medications,1,,,,,,Omeprazole,20,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,family_members,1,,,,,,,,,"Jenny Cage",2,40,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,visits,1,,,,,,,,,,,,,2018-07-31,200,,2,,,,,,,,,,,,,,,,,,,,,,,,
+2,adverse_events,1,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,2
