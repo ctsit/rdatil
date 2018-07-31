@@ -18,5 +18,7 @@ A kable.
 Makes a pretty table with the given data and labels.
 }
 \examples{
+data <- c('Female', 'Female', 'Female', 'Male')
+columns <- c('Gender', 'Percentage')
 print_table(data, columns)
 }
