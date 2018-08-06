@@ -16,5 +16,5 @@ A data frame containing the records with no repeating elements.
 Removes repeating instruments.
 }
 \examples{
-trim_repeating_instruments(records)
+trim_repeating_instruments(Medication_records)
 }

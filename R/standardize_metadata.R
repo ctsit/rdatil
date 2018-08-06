@@ -7,7 +7,7 @@
 #'         with filled out categorical data for 'yesno' fields.
 #' @export
 #' @examples
-#' standarize_metadata(metadata)
+#' standarize_metadata(AnimalIdentification_DataDictionary)
 standarize_metadata <- function(metadata) {
   names(metadata) <- c(
     "field_name", "form_name", "section_header", "field_type",

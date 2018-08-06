@@ -23,6 +23,13 @@ from_directory, as well as the date reflected in the filenames.
 If no arguments are provided, the directory is assumed to be the '~/Downloads/' folder.
 }
 \examples{
-get_latest_data_file_names(from_directory, patterns)
-get_latest_data_file_names(patterns = patterns)
+dataDict <- 'AnimalIdentification_DataDictionary_2018-07-06.csv'
+data <- 'AnimalIdentification_Data_2018-07-06_1604.csv'
+write.csv("", file.path(system.file(), dataDict))
+write.csv("", file.path(system.file(), data))
+patterns <- c("data" = "AnimalIdentification_Data_20\\\\d\\\\d.*\\\\.csv",
+"metadata" = "AnimalIdentification_DataDictionary_20\\\\d\\\\d.*\\\\.csv",
+"date" = "\\\\d{4}-\\\\d{2}-\\\\d{2}")
+get_latest_data_file_names(system.file(), patterns)
+file.remove(c(file.path(system.file(), dataDict), file.path(system.file(), data)))
 }
