@@ -5,8 +5,9 @@
 #' @param metadata A REDCap metadata in REDCap's standard format.
 #' @return A REDCap metadata in the SpectrumHealthResearch format
 #'         with filled out categorical data for 'yesno' fields.
+#' @export
 #' @examples
-#' standarize_metadata(metadata)
+#' standarize_metadata(AnimalIdentification_DataDictionary)
 standarize_metadata <- function(metadata) {
   names(metadata) <- c(
     "field_name", "form_name", "section_header", "field_type",

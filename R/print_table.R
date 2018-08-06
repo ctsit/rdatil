@@ -3,7 +3,10 @@
 #' @param data A data frame containing the data.
 #' @param columns A vector containing the column names.
 #' @return A kable.
+#' @export
 #' @examples
+#' data <- c('Female', 'Female', 'Female', 'Male')
+#' columns <- c('Gender', 'Percentage')
 #' print_table(data, columns)
 print_table <- function(data, columns) {
   fig <- round(prop.table(table(data))*100, digits = 1)

@@ -4,8 +4,10 @@
 #' @param metadata A REDCap metadata file with columns in the standardized format defined in
 #'        https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r
 #' @return A dataframe with the columns, "field_name", "field_type", form_name", "code", and "label".
+#' @import dplyr tidyr
+#' @export
 #' @examples
-#' get_categorical_field_labels(metadata)
+#' get_categorical_field_labels(AnimalIdentification_DataDictionary)
 get_categorical_field_labels <- function(metadata) {
   categorical_fields <- metadata %>%
     dplyr::filter(field_type %in% c("checkbox", "radio", "yesno", "dropdown")) %>%
@@ -18,7 +20,7 @@ get_categorical_field_labels <- function(metadata) {
   # Split columns into rows by '|'
   categorical_fields <- categorical_fields %>%
     dplyr::mutate(select_choices_or_calculations = strsplit(as.character(select_choices_or_calculations), "\\|\\s?")) %>%
-    unnest(select_choices_or_calculations)
+    tidyr::unnest(select_choices_or_calculations)
 
   # Split columns into two columns by ','
   categorical_fields <- categorical_fields %>%

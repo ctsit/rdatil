@@ -19,5 +19,5 @@ Generates a row of code-label pair data for each code in each
 categorical variable in a REDCap metatdata file.
 }
 \examples{
-get_categorical_field_labels(metadata)
+get_categorical_field_labels(AnimalIdentification_DataDictionary)
 }

@@ -21,5 +21,5 @@ https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_spli
 and fills out the categorical data for fields of type 'yesno'.
 }
 \examples{
-standarize_metadata(metadata)
+standarize_metadata(AnimalIdentification_DataDictionary)
 }
