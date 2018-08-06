@@ -9,4 +9,4 @@
 
 `standarize_metadata`: Standardizes variable names in the metadata file according to the [SpectrumHealthResearch](https://github.com/SpectrumHealthResearch/REDCapRITS/blob/master/R/R/REDCap_split.r) format.
 
-`get_latest_warrior_data_file_names`: This function is specific to the **WARRIOR** project. It obtains the latest downloaded **WARRIOR** data and metadata data filenames (in terms of date) from the provided from_directory, as well as the date provided in their filenames.
+`get_latest_data_file_names`: Obtains the latest downloaded data and metadata data filenames (in terms of date) from the provided from_directory based on the given pattern, as well as the date provided in their filenames.

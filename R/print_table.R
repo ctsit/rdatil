@@ -1,10 +1,14 @@
+#' Makes a pretty table with the given data and labels.
+#'
+#' @param data A data frame containing the data.
+#' @param columns A vector containing the column names.
+#' @return A kable.
+#' @export
+#' @examples
+#' data <- c('Female', 'Female', 'Female', 'Male')
+#' columns <- c('Gender', 'Percentage')
+#' print_table(data, columns)
 print_table <- function(data, columns) {
-  # Makes a pretty table with the given data and labels.
-  #
-  # Args:
-  #   the data to be displayed and the column names
-  # Returns:
-  #   a kable
   fig <- round(prop.table(table(data))*100, digits = 1)
   fig <- as.data.frame(fig)
   names(fig) <- columns
