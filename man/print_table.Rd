@@ -4,12 +4,12 @@
 \alias{print_table}
 \title{Makes a pretty table with the given data and labels.}
 \usage{
-print_table(data, columns)
+print_table(data, main_column_name)
 }
 \arguments{
 \item{data}{A data frame containing the data.}
 
-\item{columns}{A vector containing the column names.}
+\item{main_column_name}{A string containing the main column name.}
 }
 \value{
 A kable.
@@ -19,6 +19,6 @@ Makes a pretty table with the given data and labels.
 }
 \examples{
 data <- c('Female', 'Female', 'Female', 'Male')
-columns <- c('Gender', 'Percentage')
-print_table(data, columns)
+main_column_name <- c('Gender')
+print_table(data, main_column_name)
 }
