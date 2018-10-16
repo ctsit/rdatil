@@ -6,12 +6,17 @@
 #' @export
 #' @examples
 #' data <- c('Female', 'Female', 'Female', 'Male')
-#' columns <- c('Gender', 'Percentage')
-#' print_table(data, columns)
-print_table <- function(data, columns) {
-  fig <- round(prop.table(table(data))*100, digits = 1)
-  fig <- as.data.frame(fig)
-  names(fig) <- columns
+#' columns <- c('Gender')
+#' print_table(data, main_column_name)
+print_table <- function(data, main_column_name) {
+  fig <- as.data.frame(round(prop.table(table(data))*100, digits = 1))
+  fig <- fig %>%
+    mutate (Count = as.data.frame(table(data))$Freq) %>%
+    mutate (main_column_name = data) %>%
+    mutate (
+      `Percent (Count)` = paste0(Freq, "% (", Count, ")")
+    ) %>%
+    select(-Freq, -Count, -data)
 
   return(knitr::kable(fig, booktabs = T) %>% kableExtra::kable_styling(latex_options = "striped"))
 }
