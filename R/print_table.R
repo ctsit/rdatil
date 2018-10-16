@@ -1,7 +1,7 @@
 #' Makes a pretty table with the given data and labels.
 #'
 #' @param data A data frame containing the data.
-#' @param columns A vector containing the column names.
+#' @param main_column_name A string containing the main column name.
 #' @return A kable.
 #' @export
 #' @examples
