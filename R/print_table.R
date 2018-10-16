@@ -6,13 +6,13 @@
 #' @export
 #' @examples
 #' data <- c('Female', 'Female', 'Female', 'Male')
-#' columns <- c('Gender')
+#' main_column_name <- c('Gender')
 #' print_table(data, main_column_name)
 print_table <- function(data, main_column_name) {
   fig <- as.data.frame(round(prop.table(table(data))*100, digits = 1))
   fig <- fig %>%
     mutate (Count = as.data.frame(table(data))$Freq) %>%
-    mutate (main_column_name = data) %>%
+    mutate (!!main_column_name := data) %>%
     mutate (
       `Percent (Count)` = paste0(Freq, "% (", Count, ")")
     ) %>%
