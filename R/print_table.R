@@ -18,5 +18,6 @@ print_table <- function(data, main_column_name) {
     ) %>%
     select(-Freq.x, -Freq.y, -data)
 
-  return(knitr::kable(fig, booktabs = T) %>% kableExtra::kable_styling(latex_options = "striped"))
+  return(knitr::kable(fig, booktabs = T, align = c('l', 'r')) %>%
+           kableExtra::kable_styling(latex_options = "striped"))
 }
