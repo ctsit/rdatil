@@ -1,17 +1,23 @@
 #' Makes a pretty table with the given data and labels.
 #'
 #' @param data A data frame containing the data.
-#' @param columns A vector containing the column names.
+#' @param main_column_name A string containing the main column name.
 #' @return A kable.
 #' @export
 #' @examples
 #' data <- c('Female', 'Female', 'Female', 'Male')
-#' columns <- c('Gender', 'Percentage')
-#' print_table(data, columns)
-print_table <- function(data, columns) {
-  fig <- round(prop.table(table(data))*100, digits = 1)
-  fig <- as.data.frame(fig)
-  names(fig) <- columns
+#' main_column_name <- c('Gender')
+#' print_table(data, main_column_name)
+print_table <- function(data, main_column_name) {
+  fig <- as.data.frame(round(prop.table(table(data))*100, digits = 1))
+  fig <- fig %>%
+    left_join(., as.data.frame(table(data)), by="data") %>%
+    mutate (!!main_column_name := data) %>%
+    mutate (
+      `Percent (Count)` = paste0(Freq.x, "% (", Freq.y, ")")
+    ) %>%
+    select(-Freq.x, -Freq.y, -data)
 
-  return(knitr::kable(fig, booktabs = T) %>% kableExtra::kable_styling(latex_options = "striped"))
+  return(knitr::kable(fig, booktabs = T, align = c('l', 'r')) %>%
+           kableExtra::kable_styling(latex_options = "striped"))
 }
