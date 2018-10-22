@@ -12,3 +12,5 @@
 `get_latest_data_file_names`: Obtains the latest downloaded data and metadata data filenames (in terms of date) from the provided from_directory based on the given pattern, as well as the date provided in their filenames.
 
 `print_table`: Outputs a table with the percentage and count of the given factor input data.
+
+`trim_repeating_instruments`: removes all REDCap repeating instruments from a dataframe using tidy tools.
